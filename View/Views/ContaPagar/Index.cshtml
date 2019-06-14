@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/ContaPagarIndex.css"
+</head>
+<body>
+    <div>
+        <h1>Lista de Contas a Pagar</h1>
+    </div>
+    <a href="/contaPagar"
+    <div>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < ViewBag.ContasPagar.Count; i++)
+                {
+                    <tr>
+                        <td>@ViewBag.ContasPagar[i].Id</td>
+                        <td>@ViewBag.ContasPagar[i].Nome</td>
+                        <td>@ViewBag.ContasPagar[i].Valor</td>
+                        <td>@ViewBag.ContasPagar[i].Tipo</td>
+                        <td>@ViewBag.ContasPagar[i].Descricao</td>
+                        <td>@ViewBag.ContasPagar[i].Satus</td>
+                        <td>
+                            <a href="/contaPagar/editar/?id=@ViewBag.ContasPagar[i].Id">Editar</a>
+                            <a href="/contaPagar/apagar/?id=@ViewBag.ContasPagar[i].Id">Apagar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

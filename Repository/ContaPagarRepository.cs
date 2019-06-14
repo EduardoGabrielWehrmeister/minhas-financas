@@ -9,7 +9,7 @@ using Model;
 
 namespace Repository
 {
-    class ContaPagarRepository : IRepository
+    public class ContaPagarRepository : IRepository
     {
         private Conexao conexao;
 
@@ -28,32 +28,32 @@ namespace Repository
             return quantidadeAfetada == 1;
         }
 
-        public bool Atualizar(ContaPagar contapagar)
+        public bool Atualizar(ContaPagar contaPagar)
         {
             SqlCommand comando = conexao.Conectar();
             comando.CommandText = @"UPDATE contaspagar SET nome = @NOME, valor = @VALOR, tipo = @TIPO,
 descricao = @DESCRICAO, status = @STATUS WHERE id = @ID";
-            comando.Parameters.AddWithValue("@NOME", contapagar.Nome);
-            comando.Parameters.AddWithValue("@VALOR", contapagar.Valor);
-            comando.Parameters.AddWithValue("@TIPO", contapagar.Tipo);
-            comando.Parameters.AddWithValue("@DESCRICAO", contapagar.Descricao);
-            comando.Parameters.AddWithValue("@STATUS", contapagar.Status);
-            comando.Parameters.AddWithValue("@ID", contapagar.Id);
+            comando.Parameters.AddWithValue("@NOME", contaPagar.Nome);
+            comando.Parameters.AddWithValue("@VALOR", contaPagar.Valor);
+            comando.Parameters.AddWithValue("@TIPO", contaPagar.Tipo);
+            comando.Parameters.AddWithValue("@DESCRICAO", contaPagar.Descricao);
+            comando.Parameters.AddWithValue("@STATUS", contaPagar.Status);
+            comando.Parameters.AddWithValue("@ID", contaPagar.Id);
             int quantidadeAfetada = comando.ExecuteNonQuery();
             comando.Connection.Close();
             return quantidadeAfetada == 1;
         }
 
-        public int Inserir(ContaPagar contapagar)
+        public int Inserir(ContaPagar contaPagar)
         {
             SqlCommand comando = conexao.Conectar();
             comando.CommandText = @"INSERT INTO contaspagar (nome, valor, tipo, descricao, status)
 OUTPUT INSERTED.ID VALUES (@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
-            comando.Parameters.AddWithValue("@NOME", contapagar.Nome);
-            comando.Parameters.AddWithValue("@VALOR", contapagar.Valor);
-            comando.Parameters.AddWithValue("@TIPO", contapagar.Tipo);
-            comando.Parameters.AddWithValue("@DESCRICAO", contapagar.Descricao);
-            comando.Parameters.AddWithValue("@STATUS", contapagar.Status);
+            comando.Parameters.AddWithValue("@NOME", contaPagar.Nome);
+            comando.Parameters.AddWithValue("@VALOR", contaPagar.Valor);
+            comando.Parameters.AddWithValue("@TIPO", contaPagar.Tipo);
+            comando.Parameters.AddWithValue("@DESCRICAO", contaPagar.Descricao);
+            comando.Parameters.AddWithValue("@STATUS", contaPagar.Status);
             int id = Convert.ToInt32(comando.ExecuteScalar());
             comando.Connection.Close();
             return id; 
@@ -74,15 +74,15 @@ OUTPUT INSERTED.ID VALUES (@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
             }
 
             DataRow row = tabela.Rows[0];
-            ContaPagar contapagar = new ContaPagar();
-            contapagar.Id = Convert.ToInt32(row["id"]);
-            contapagar.Nome = row["nome"].ToString();
-            contapagar.Valor = Convert.ToDecimal(row["valor"]);
-            contapagar.Tipo = row["tipo"].ToString();
-            contapagar.Descricao = row["descricao"].ToString();
-            contapagar.Status = row["status"].ToString();
+            ContaPagar contaPagar = new ContaPagar();
+            contaPagar.Id = Convert.ToInt32(row["id"]);
+            contaPagar.Nome = row["nome"].ToString();
+            contaPagar.Valor = Convert.ToDecimal(row["valor"]);
+            contaPagar.Tipo = row["tipo"].ToString();
+            contaPagar.Descricao = row["descricao"].ToString();
+            contaPagar.Status = row["status"].ToString();
 
-            return contapagar;
+            return contaPagar;
 
         }
 
@@ -97,21 +97,21 @@ OUTPUT INSERTED.ID VALUES (@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
             tabela.Load(comando.ExecuteReader());
             comando.Connection.Close();
 
-            List<ContaPagar> contaspagar = new List<ContaPagar>();
+            List<ContaPagar> contasPagar = new List<ContaPagar>();
 
             for(int i = 0; i < tabela.Rows.Count; i++)
             {
                 DataRow row = tabela.Rows[i];
-                ContaPagar contapagar = new ContaPagar();
-                contapagar.Id = Convert.ToInt32(row["id"]);
-                contapagar.Nome = row["nome"].ToString();
-                contapagar.Valor = Convert.ToUInt32(row["valor"]);
-                contapagar.Tipo = row["tipo"].ToString();
-                contapagar.Descricao = row["descricao"].ToString();
-                contapagar.Status = row["status"].ToString();
-                contaspagar.Add(contapagar);
+                ContaPagar contaPagar = new ContaPagar();
+                contaPagar.Id = Convert.ToInt32(row["id"]);
+                contaPagar.Nome = row["nome"].ToString();
+                contaPagar.Valor = Convert.ToUInt32(row["valor"]);
+                contaPagar.Tipo = row["tipo"].ToString();
+                contaPagar.Descricao = row["descricao"].ToString();
+                contaPagar.Status = row["status"].ToString();
+                contasPagar.Add(contaPagar);
             }
-            return contaspagar;
+            return contasPagar;
 
         }
     }
