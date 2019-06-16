@@ -8,6 +8,7 @@ descricao VARCHAR(300),
 status VARCHAR(50),
 );
 
+DROP TABLE contasreceber
 CREATE TABLE contasreceber(
 id INT PRIMARY KEY IDENTITY(1,1),
 nome VARCHAR(100),

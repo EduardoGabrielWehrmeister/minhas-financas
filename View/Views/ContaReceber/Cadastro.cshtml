@@ -12,7 +12,7 @@
 </head>
 <body>
     <div>
-        <form action="/contaPagar/store" method="post">
+        <form action="/contaReceber/store" method="post">
 
             <div>
                 <label for="campo-nome">Nome</label>
@@ -38,16 +38,13 @@
                 <label for="campo-status">Status</label>
                 <select typeof="text" name="status" id="campo-status">
                     <option value="pendente">Pendente</option>
-                    <option value="atrasado">Atrasado</option>
-                    <option value="pago">Pago</option>
-                </select >
+                    <option value="recebido">Recebido</option>
+                </select>
             </div>
 
             <div>
                 <button type="submit">Salvar</button>
             </div>
-
-
         </form>
     </div>
 </body>

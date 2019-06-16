@@ -23,13 +23,13 @@ namespace Repository
 
     interface JRepository
     {
-        int Inserir(ContaReceber contReceber);
+        int Inserir(ContaReceber contaReceber);
 
         bool Atualizar(ContaReceber contaReceber);
 
         bool Apagar(int id);
 
-        ContaPagar ObterPeloId(int id);
+        ContaReceber ObterPeloId(int id);
 
         List<ContaReceber> ObterTodos(string busca);
     }

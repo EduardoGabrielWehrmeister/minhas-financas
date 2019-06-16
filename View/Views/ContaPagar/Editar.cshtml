@@ -11,7 +11,7 @@
     <title>Editar</title>
 </head>
 <body>
-    <form action="~/contaPagar/update" method="post">
+    <form action="~/contapagar/update" method="post">
 
         <label for="campo-nome">Nome</label>
         <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContaPagar.Nome" />
@@ -26,7 +26,7 @@
         <input type="text" name="descricao" id="campo-descricao" value="@ViewBag.ContaPagar.Descricao" />
 
         <label for="campo-status">Status</label>
-        <select typeof="text" name="status" id="campo=status" value="@ViewBag.ContaPagar.Status">
+        <select typeof="text" name="status" id="campo-status" value="@ViewBag.ContaPagar.Status">
             <option value="pendente">Pendente</option>
             <option value="atrasado">Atrasado</option>
             <option value="pago">Pago</option>

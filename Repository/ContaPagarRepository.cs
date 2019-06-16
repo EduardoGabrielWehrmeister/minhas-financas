@@ -105,7 +105,7 @@ OUTPUT INSERTED.ID VALUES(@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
                 ContaPagar contaPagar = new ContaPagar();
                 contaPagar.Id = Convert.ToInt32(row["id"]);
                 contaPagar.Nome = row["nome"].ToString();
-                contaPagar.Valor = Convert.ToUInt32(row["valor"]);
+                contaPagar.Valor = Convert.ToInt32(row["valor"]);
                 contaPagar.Tipo = row["tipo"].ToString();
                 contaPagar.Descricao = row["descricao"].ToString();
                 contaPagar.Status = row["status"].ToString();
