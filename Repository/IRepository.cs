@@ -11,12 +11,30 @@ namespace Repository
     {
         int Inserir(ContaPagar contaPagar);
 
-        bool Apagar(int id);
-
         bool Atualizar(ContaPagar contaPagar);
+
+        bool Apagar(int id);
 
         ContaPagar ObterPeloId(int id);
 
         List<ContaPagar> ObterTodos(string busca);
+
     }
+
+    interface JRepository
+    {
+        int Inserir(ContaReceber contReceber);
+
+        bool Atualizar(ContaReceber contaReceber);
+
+        bool Apagar(int id);
+
+        ContaPagar ObterPeloId(int id);
+
+        List<ContaReceber> ObterTodos(string busca);
+    }
+
+
+
+
 }
