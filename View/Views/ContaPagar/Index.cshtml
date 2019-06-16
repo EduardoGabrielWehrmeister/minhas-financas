@@ -9,13 +9,18 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <link rel="stylesheet" href="~/Content/ContaPagarIndex.css"
+    <link href="~/Content/ContaPagarIndex.css" rel="stylesheet" />
 </head>
 <body>
     <div>
         <h1>Lista de Contas a Pagar</h1>
+        <h3>@ViewBag.Texto</h3>
     </div>
-    <a href="/contaPagar"
+    <a href="/contaPagar/cadastro">Nova Conta</a>
+    <form action="/contaPagar/index" method="get">
+        <label for="campo-pesquisa">Pesquisa</label>
+        <input type="text" name="pesquisa" id="campo-pesquisa"/>
+    </form>
     <div>
         <table class="tabela">
             <thead>
@@ -26,6 +31,7 @@
                     <th>Tipo</th>
                     <th>Descrição</th>
                     <th>Status</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +43,7 @@
                         <td>@ViewBag.ContasPagar[i].Valor</td>
                         <td>@ViewBag.ContasPagar[i].Tipo</td>
                         <td>@ViewBag.ContasPagar[i].Descricao</td>
-                        <td>@ViewBag.ContasPagar[i].Satus</td>
+                        <td>@ViewBag.ContasPagar[i].Status</td>
                         <td>
                             <a href="/contaPagar/editar/?id=@ViewBag.ContasPagar[i].Id">Editar</a>
                             <a href="/contaPagar/apagar/?id=@ViewBag.ContasPagar[i].Id">Apagar</a>

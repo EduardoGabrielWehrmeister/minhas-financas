@@ -47,8 +47,8 @@ descricao = @DESCRICAO, status = @STATUS WHERE id = @ID";
         public int Inserir(ContaPagar contaPagar)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = @"INSERT INTO contaspagar (nome, valor, tipo, descricao, status)
-OUTPUT INSERTED.ID VALUES (@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
+            comando.CommandText = @"INSERT INTO contaspagar(nome, valor, tipo, descricao, status)
+OUTPUT INSERTED.ID VALUES(@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
             comando.Parameters.AddWithValue("@NOME", contaPagar.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaPagar.Valor);
             comando.Parameters.AddWithValue("@TIPO", contaPagar.Tipo);

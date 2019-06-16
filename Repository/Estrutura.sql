@@ -5,5 +5,7 @@ nome VARCHAR(100),
 valor DECIMAL(10,2),
 tipo VARCHAR(50),
 descricao VARCHAR(300),
-status VARCHAR(100),
+status VARCHAR(50),
 );
+
+
