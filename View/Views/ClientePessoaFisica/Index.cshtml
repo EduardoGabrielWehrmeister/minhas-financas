@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Clientes(Pessoas Fisícas)</h1>
+    </div>
+
+
+    <form>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Data Nascimento</th>
+                        <th>RG</th>
+                        <th>Sexo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(int i = 0; i < ViewBag.ClientePessoasFisicas.Count; i++)
+                    {
+                        <tr>
+                            <td>@ViewBag.ClientePessoasFisicas[i].Id</td>
+                            <td>@ViewBag.ClientePessoasFisicas[i].Nome</td>
+                            <td>@ViewBag.ClientePessoasFisicas[i].Cpf</td>
+                            <td>@ViewBag.ClientePessoasFisicas[i].DataNascimento</td>
+                            <td>@ViewBag.ClientePessoasFisicas[i].Rg</td>
+                            <td>@ViewBag.ClientePessoasFisicas[i].Sexo</td>
+                            <td>
+                                <a href="/clientePessoaFisica/editar?id=@ViewBag.ClientePessoasFisicas[i].Id">Editar</a>
+                                <a href="/clientePessoaFisica/apagar?id=@ViewBag.ClientePessoasFisicas[i].Id">Apagar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </form>
+</body>
+</html>

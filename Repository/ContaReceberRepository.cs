@@ -9,7 +9,7 @@ using Model;
 
 namespace Repository
 {
-    public class ContaReceberRepository : JRepository
+    public class ContaReceberRepository : IContaReceberRepository
     {
         private Conexao conexao;
 
@@ -21,7 +21,7 @@ namespace Repository
         public bool Apagar(int id)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = "DELETE FROM contasreceber WHERE id = @ID";
+            comando.CommandText = "DELETE FROM contas_receber WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
             int quantidadeAfetada = comando.ExecuteNonQuery();
             comando.Connection.Close();
@@ -32,7 +32,7 @@ namespace Repository
         public bool Atualizar(ContaReceber contaReceber)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = @"UPDATE contasreceber SET nome = @NOME, valor = @VALOR, tipo = @TIPO, descricao = @DESCRICAO, status = @STATUS WHERE id = @ID";
+            comando.CommandText = @"UPDATE contas_receber SET nome = @NOME, valor = @VALOR, tipo = @TIPO, descricao = @DESCRICAO, status = @STATUS WHERE id = @ID";
             comando.Parameters.AddWithValue("@NOME", contaReceber.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaReceber.Valor);
             comando.Parameters.AddWithValue("@TIPO", contaReceber.Tipo);
@@ -47,7 +47,7 @@ namespace Repository
         public int Inserir(ContaReceber contaReceber)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = @"INSERT INTO contasreceber(nome, valor, tipo, descricao, status) 
+            comando.CommandText = @"INSERT INTO contas_receber(nome, valor, tipo, descricao, status) 
 OUTPUT INSERTED.ID VALUES(@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
             comando.Parameters.AddWithValue("@NOME", contaReceber.Nome);
             comando.Parameters.AddWithValue("@VALOR", contaReceber.Valor);
@@ -63,7 +63,7 @@ OUTPUT INSERTED.ID VALUES(@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
         public ContaReceber ObterPeloId(int id)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = "SELECT * FROM contasreceber WHERE id = @ID";
+            comando.CommandText = "SELECT * FROM contas_receber WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
@@ -88,7 +88,7 @@ OUTPUT INSERTED.ID VALUES(@NOME, @VALOR, @TIPO, @DESCRICAO, @STATUS)";
         public List<ContaReceber> ObterTodos(string busca)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = "SELECT nome FROM contasreceber WHERE nome LIKE @NOME";
+            comando.CommandText = "SELECT * FROM contas_receber WHERE nome LIKE @NOME";
             busca = $"%{busca}%";
             comando.Parameters.AddWithValue("@NOME", busca);
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    interface IRepository
+    interface IContaPagarRepository
     {
         int Inserir(ContaPagar contaPagar);
 
@@ -20,21 +20,4 @@ namespace Repository
         List<ContaPagar> ObterTodos(string busca);
 
     }
-
-    interface JRepository
-    {
-        int Inserir(ContaReceber contaReceber);
-
-        bool Atualizar(ContaReceber contaReceber);
-
-        bool Apagar(int id);
-
-        ContaReceber ObterPeloId(int id);
-
-        List<ContaReceber> ObterTodos(string busca);
-    }
-
-
-
-
 }

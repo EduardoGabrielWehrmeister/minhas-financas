@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientePessoaFisica.cs" />
     <Compile Include="ContaPagar.cs" />
     <Compile Include="ContaReceber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

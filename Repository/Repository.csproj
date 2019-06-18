@@ -41,10 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientePessoaFisicaRepository.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="ContaPagarRepository.cs" />
     <Compile Include="ContaReceberRepository.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="IContaPagarRepository.cs" />
+    <Compile Include="IContaReceberRepository.cs.cs" />
+    <Compile Include="lClientePessoaFisica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
