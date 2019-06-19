@@ -34,12 +34,12 @@ namespace View.Controllers
 
         }
 
-        public ActionResult Store(string nome, string cpf, DateTime DataNascimento, string rg, string sexo)
+        public ActionResult Store(string nome, string cpf, DateTime dataNascimento, string rg, string sexo)
         {
             ClientePessoaFisica clientePessoaFisica = new ClientePessoaFisica();
             clientePessoaFisica.Nome = nome;
             clientePessoaFisica.Cpf = cpf;
-            clientePessoaFisica.DataNascimento = DataNascimento;
+            clientePessoaFisica.DataNascimento = dataNascimento;
             clientePessoaFisica.Rg = rg;
             clientePessoaFisica.Sexo = sexo;
 
@@ -49,13 +49,13 @@ namespace View.Controllers
 
         }
 
-        public ActionResult Update(int id, string nome, string cpf, DateTime DataNascimento, string rg, string sexo)
+        public ActionResult Update(int id, string nome, string cpf, DateTime dataNascimento, string rg, string sexo)
         {
             ClientePessoaFisica clientePessoaFisica = new ClientePessoaFisica();
             clientePessoaFisica.Nome = nome;
             clientePessoaFisica.Id = id;
             clientePessoaFisica.Cpf = cpf;
-            clientePessoaFisica.DataNascimento = DataNascimento;
+            clientePessoaFisica.DataNascimento = dataNascimento;
             clientePessoaFisica.Rg = rg;
             clientePessoaFisica.Sexo = sexo;
 

@@ -88,7 +88,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ClientePessoaFisicaIndex.css" />
     <Content Include="Content\ContaPagarIndex.css" />
+    <Content Include="Content\ContaReceberIndex.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -112,6 +114,8 @@
     <Content Include="Views\ContaReceber\Cadastro.cshtml" />
     <Content Include="Views\ContaReceber\Editar.cshtml" />
     <Content Include="Views\ClientePessoaFisica\Index.cshtml" />
+    <Content Include="Views\ClientePessoaFisica\Cadastro.cshtml" />
+    <Content Include="Views\ClientePessoaFisica\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

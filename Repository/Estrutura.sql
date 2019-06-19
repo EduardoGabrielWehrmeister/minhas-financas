@@ -28,5 +28,6 @@ rg VARCHAR(30),
 sexo VARCHAR(100),
 );
 
+SELECT sexo FROM pessoas_fisicas 
 
 

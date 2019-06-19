@@ -90,7 +90,7 @@ namespace Repository
         {
             SqlCommand comando = conexao.Conectar();
             comando.CommandText = "SELECT * FROM pessoas_fisicas WHERE nome LIKE @NOME";
-            busca = $"%{busca}";
+            busca = $"%{busca}%";
             comando.Parameters.AddWithValue("@NOME", busca);
 
             DataTable tabela = new DataTable();

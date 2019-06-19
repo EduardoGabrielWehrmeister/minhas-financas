@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro</title>
+</head>
+<body>
+    <div>
+        <form action="/ClientePessoaFisica/store" method="post">
+
+
+            <label for="campo-nome">Nome</label>
+            <input type="text" name="nome" id="campo-nome" />
+
+            <label for="campo-cpf">CPF</label>
+            <input type="text" name="cpf" id="campo-cpf" />
+
+            <label for="campo-data-nascimento">Data Nascimento</label>
+            <input type="date" name="dataNascimento" id="campo-data-nascimento" />
+
+            <label for="campo-rg">RG</label>
+            <input type="text" name="rg" id="campo-rg" />
+
+            <input type="radio" name="sexo" id="campo-sexo-feminino" value="feminino" />
+            <label for="campo-sexo-feminino">Feminino</label>
+
+            <input type="radio" name="sexo" id="campo-sexo-masculino" value="masculino" />
+            <label for="campo-sexo-masculino">Masculino</label>
+
+            <button type="submit">Salvar</button>
+
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿.tabela {
+    width: 100%;
+    background-color: blueviolet;
+    color: white;
+}
+
+th {
+    height: 20px;
+    border-right-color: white;
+    border-right-style: solid;
+    border-left-width: 2px;
+}
