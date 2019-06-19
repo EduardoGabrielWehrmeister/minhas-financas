@@ -28,6 +28,17 @@ rg VARCHAR(30),
 sexo VARCHAR(100),
 );
 
+DROP TABLE endereco
+CREATE TABLE endereco(
+id INT PRIMARY KEY IDENTITY(1,1),
+unidade_federativa VARCHAR(100),
+cidade VARCHAR(200),
+logradouro VARCHAR(100),
+cep VARCHAR(30),
+numero INT,
+complemento VARCHAR(500),
+);
+
 SELECT sexo FROM pessoas_fisicas 
 
 
