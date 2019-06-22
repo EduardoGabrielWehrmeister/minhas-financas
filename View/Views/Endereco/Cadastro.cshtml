@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro</title>
+</head>
+<body>
+    <form action="/endereco/store" method="post">
+
+        <label for="campo-unidade-federativa">Unidade Federativa</label>
+        <input type="text" name="unidadeFederativa" id="campo-unidade-federativa" />
+
+        <label for="campo-cidade">Cidade</label>
+        <input type="text" name="cidade" id="campo-cidade" />
+
+        <label for="campo-logradouro">Logradouro</label>
+        <input type="text" name="logradouro" id="campo-logradouro" />
+
+        <label for="campo-cep">Cep</label>
+        <input type="text" name="cep" id="campo-cep" />
+
+        <label for="campo-numero">Número</label>
+        <input type="number" name="numero" id="campo-numero" />
+
+        <div>
+            <label for="campo-complemento">Complemento</label>
+            <textarea id="campo-complemento" name="complemento"></textarea>
+        </div>
+
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

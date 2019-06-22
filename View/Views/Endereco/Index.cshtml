@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Endereços</h1>
+    </div>
+    <a href="/endereco/cadastro">Novo Endereço</a>
+    <form action="/endereco/index" method="get">
+        <label for="campo-pesquisa">Pesquisa</label>
+        <input type="text" name="pesquisa" id=" campo-pesquisa" : />
+    </form>
+    <div>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Unidade Federativa</th>
+                    <th>Cidade</th>
+                    <th>Logradouro</th>
+                    <th>Cep</th>
+                    <th>Número</th>
+                    <th>Complemento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < ViewBag.Enderecos.Count; i++)
+                {
+                    <tr>
+                        <th>@ViewBag.Enderecos[i].Id</th>
+                        <th>@ViewBag.Enderecos[i].UnidadeFederativa</th>
+                        <th>@ViewBag.Enderecos[i].Cidade</th>
+                        <th>@ViewBag.Enderecos[i].Logradouro</th>
+                        <th>@ViewBag.Enderecos[i].Cep</th>
+                        <th>@ViewBag.Enderecos[i].Numero</th>
+                        <th>@ViewBag.Enderecos[i].Complemento</th>
+                        <td>
+                            <a href="/endereco/editar?id=@ViewBag.Enderecos[i].Id">Editar</a>
+                            <a href="/endereco/apagar?id=@ViewBag.Enderecos[i].id">Apagar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

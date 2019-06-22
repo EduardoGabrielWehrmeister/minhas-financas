@@ -28,8 +28,8 @@ rg VARCHAR(30),
 sexo VARCHAR(100),
 );
 
-DROP TABLE endereco
-CREATE TABLE endereco(
+DROP TABLE enderecos
+CREATE TABLE enderecos(
 id INT PRIMARY KEY IDENTITY(1,1),
 unidade_federativa VARCHAR(100),
 cidade VARCHAR(200),

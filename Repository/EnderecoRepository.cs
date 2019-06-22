@@ -49,10 +49,10 @@ numero = @NUMERO, complemento = @COMPLEMENTO WHERE id = @ID";
         public int Inserir(Endereco endereco)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = @"INSERT INTO enderecos (unidade_federerativa, cidade, logradouro, cep, numero, complemento) OUTPUT INSERTED.ID VALUES (@UNIDADE_FEDERATIVA,
+            comando.CommandText = @"INSERT INTO enderecos (unidade_federativa, cidade, logradouro, cep, numero, complemento) OUTPUT INSERTED.ID VALUES(@UNIDADE_FEDERATIVA,
 @CIDADE, @LOGRADOURO, @CEP, @NUMERO, @COMPLEMENTO)";
             comando.Parameters.AddWithValue("@UNIDADE_FEDERATIVA", endereco.UnidadeFederativa);
-            comando.Parameters.AddWithValue("@CIDADE", endereco.Logradouro);
+            comando.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
             comando.Parameters.AddWithValue("@LOGRADOURO", endereco.Logradouro);
             comando.Parameters.AddWithValue("@CEP", endereco.Cep);
             comando.Parameters.AddWithValue("@NUMERO", endereco.Numero);
@@ -91,9 +91,9 @@ numero = @NUMERO, complemento = @COMPLEMENTO WHERE id = @ID";
         public List<Endereco> ObterTodos(string busca)
         {
             SqlCommand comando = conexao.Conectar();
-            comando.CommandText = @"SELECT * FROM enderecos WHERE nome LIKE @NOME";
+            comando.CommandText = @"SELECT * FROM enderecos WHERE cidade LIKE @CIDADE";
             busca = $"%{busca}%";
-            comando.Parameters.AddWithValue("@NOME", busca);
+            comando.Parameters.AddWithValue("@CIDADE", busca);
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
             comando.Connection.Close();
@@ -104,7 +104,7 @@ numero = @NUMERO, complemento = @COMPLEMENTO WHERE id = @ID";
             {
                 DataRow row = tabela.Rows[i];
                 Endereco endereco = new Endereco();
-                endereco.Cep = row["endereco"].ToString();
+                endereco.Cep = row["cep"].ToString();
                 endereco.Complemento = row["complemento"].ToString();
                 endereco.UnidadeFederativa = row["unidade_federativa"].ToString();
                 endereco.Numero = Convert.ToInt32(row["numero"]);
