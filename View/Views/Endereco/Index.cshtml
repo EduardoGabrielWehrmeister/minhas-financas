@@ -13,11 +13,11 @@
 <body>
     <div>
         <h1>Endereços</h1>
-    </div>
+     </div>
     <a href="/endereco/cadastro">Novo Endereço</a>
     <form action="/endereco/index" method="get">
         <label for="campo-pesquisa">Pesquisa</label>
-        <input type="text" name="pesquisa" id=" campo-pesquisa" : />
+        <input type="text" name="pesquisa" id="campo-pesquisa"/>
     </form>
     <div>
         <table class="tabela">
@@ -34,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < ViewBag.Enderecos.Count; i++)
+                @for(int i = 0; i < ViewBag.Enderecos.Count; i++)
                 {
                     <tr>
                         <th>@ViewBag.Enderecos[i].Id</th>

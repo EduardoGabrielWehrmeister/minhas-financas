@@ -15,7 +15,7 @@ namespace View.Controllers
         {
             ContaReceberRepository repository = new ContaReceberRepository();
             List<ContaReceber> contasReceber = repository.ObterTodos(pesquisa);
-
+            ViewBag.ContasReceber = contasReceber;
             return View();
         }
 

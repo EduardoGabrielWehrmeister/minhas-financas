@@ -1,5 +1,8 @@
 ﻿
 @{
+    /**/
+
+
     Layout = null;
 }
 
@@ -16,11 +19,13 @@
         <h1>Lista de Contas a Pagar</h1>
         <h3>@ViewBag.Texto</h3>
     </div>
-    <a href="/contaPagar/cadastro">Nova Conta</a>
-    <form action="/contaPagar/index" method="get">
-        <label for="campo-pesquisa">Pesquisa</label>
-        <input type="text" name="pesquisa" id="campo-pesquisa"/>
-    </form>
+    <div>
+        <a href="/contaPagar/cadastro">Nova Conta</a>
+        <form action="/contaPagar/index" method="get">
+            <label for="campo-pesquisa">Pesquisa</label>
+            <input type="text" name="pesquisa" id="campo-pesquisa" />
+        </form>
+    </div>
     <div>
         <table class="tabela">
             <thead>

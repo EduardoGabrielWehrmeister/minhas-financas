@@ -25,23 +25,23 @@
         <label for="campo-rg">RG</label>
         <input type="text" name="rg" id="campo-data-nascimento" value="@ViewBag.ClientePessoaFisica.Rg" />
 
-        @if (ViewBag.ClientePessoaFisica.Sexo == "feminino")
+        @if (ViewBag.ClientePessoaFisica.Sexo == "Feminino")
         {
-            <input type="radio" name="sexo" id="campo-sexo-feminino" value="@ViewBag.ClientePessoaFisica.Sexo" checked="checked" />
+            <input type="radio" name="sexo" id="campo-sexo-feminino" value="Feminino" checked="checked" />
         }
         else
         {
-            <input type="radio" name="sexo" id="campo-sexo-feminino" value="@ViewBag.ClientePessoaFisica.Sexo" />
+            <input type="radio" name="sexo" id="campo-sexo-feminino" value="Feminino" />
         }
         <label for="campo-sexo-feminino">Feminino</label>
 
-        @if (ViewBag.ClientePessoaFisica.Sexo == "masculino")
+        @if (ViewBag.ClientePessoaFisica.Sexo == "Masculino")
         {
-            <input type="radio" name="sexo" id="campo-sexomasculino" value="@ViewBag.ClientePessoaFisica.Sexo" checked="checked" />
+            <input type="radio" name="sexo" id="campo-sexo-masculino" value="Masculino" checked="checked" />
         }
         else
         {
-            <input type="radio" name="sexo" id="campo-sexo-masculno" value="@ViewBag.ClientePessoaFisica.Sexo" />
+            <input type="radio" name="sexo" id="campo-sexo-masculino" value="Masculino" />
         }
         <label for="campo-sexo-masculino">Masculino</label>
 

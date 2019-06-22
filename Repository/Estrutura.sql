@@ -36,7 +36,7 @@ cidade VARCHAR(200),
 logradouro VARCHAR(100),
 cep VARCHAR(30),
 numero INT,
-complemento VARCHAR(500),
+complemento VARCHAR(200),
 );
 
 SELECT sexo FROM pessoas_fisicas 

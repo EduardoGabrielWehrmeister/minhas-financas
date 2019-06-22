@@ -17,7 +17,7 @@
         <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContaPagar.Nome" />
 
         <label for="campo-valor">Valor</label>
-        <input type="number" name="valor" id="campo-valor" value="@ViewBag.ContaPagar.Valor" />
+        <input type="text" name="valor" id="campo-valor" value="@ViewBag.ContaPagar.Valor" />
 
         <label for="campo-tipo">Tipo</label>
         <input type="text" name="tipo" id="campo-tipo" value="@ViewBag.ContaPagar.Tipo" />
@@ -25,14 +25,38 @@
         <label for="campo-descricao">Descrição</label>
         <input type="text" name="descricao" id="campo-descricao" value="@ViewBag.ContaPagar.Descricao" />
 
-        <label for="campo-status">Status</label>
-        <select typeof="text" name="status" id="campo-status" value="@ViewBag.ContaPagar.Status">
-            <option value="pendente">Pendente</option>
-            <option value="atrasado">Atrasado</option>
-            <option value="pago">Pago</option>
+        <label>Status</label>
+        <select name="status">
+
+            @if (ViewBag.ContaPagar.Status == "Pendente")
+            {
+                <option value="Pendente" selected="selected">Pendente</option>
+            }
+            else
+            {
+                <option value="Pendente">Pendente</option>
+            }
+
+            @if(ViewBag.ContaPagar.Status == "Atrasado")
+            {
+                <option value="Atrasado" selected="selected">Atrasado</option>
+            }
+            else
+            {
+                <option value="Atrasado">Atrasado</option>
+            }
+
+            @if(ViewBag.ContaPagar.Status == "Pago")
+            {
+                <option value="Pago" selected="selected">Pago</option>
+            }
+            else
+            {
+                <option value="Pago">Pago</option> 
+            }
         </select>
 
-        <input type="hidden" name="id" value="@ViewBag.ContaPagar.Id"/>
+        <input type="hidden" name="id" value="@ViewBag.ContaPagar.Id" />
         <button type="submit">Salvar</button>
     </form>
 </body>

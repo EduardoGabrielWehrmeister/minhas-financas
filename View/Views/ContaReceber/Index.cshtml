@@ -1,6 +1,8 @@
 ﻿
 @{
-    Layout = null;
+                /**/
+
+                Layout = null;
 }
 
 <!DOCTYPE html>
@@ -9,12 +11,13 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/ContaReceberIndex.css" rel="stylesheet" />
 </head>
 <body>
     <div>
         <h1>Lista de Contas a Receber</h1>
     </div>
-    <a href="contaReceber/cadastro">Nova Conta a Receber</a>
+    <a href="/contaReceber/cadastro">Nova Conta a Receber</a>
     <form action="/contaReceber/index" method="get">
         <label for="campo-pesquisa">Pesquisa</label>
         <input type="text" name="pesquisa" id="campo-pesquisa" />
@@ -29,7 +32,7 @@
                     <th>Tipo</th>
                     <th>Descrição</th>
                     <th>Status</th>
-                    <th>Ação</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
